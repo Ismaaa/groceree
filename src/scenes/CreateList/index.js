@@ -10,6 +10,8 @@ import "./index.css";
 // error handlers
 import ErrorMessage from "../../components/ErrorMessage";
 
+import Header from "../../components/Header";
+
 const CreateList = (props) => {
   const { onCreate, userId } = props;
 
@@ -34,9 +36,7 @@ const CreateList = (props) => {
 
   return (
     <div>
-      <header>
-        <h1>Welcome to the Grocery List app!</h1>
-      </header>
+      <Header />
       <div className="create-container">
         <div>
           <form name="createListForm">

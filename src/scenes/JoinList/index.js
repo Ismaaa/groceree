@@ -10,6 +10,9 @@ import "./index.css";
 // error handlers
 import ErrorMessage from "../../components/ErrorMessage";
 
+// components
+import Header from '../../components/Header'
+
 function JoinList(props) {
   const {
     users,
@@ -61,9 +64,7 @@ function JoinList(props) {
 
   return (
     <div>
-      <header>
-        <h1>Welcome to the Grocery List app!</h1>
-      </header>
+      <Header />
       <div className="join-container">
         <div>
           <form name="addUserToListForm">

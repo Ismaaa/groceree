@@ -17,7 +17,7 @@ const CreateList = (props) => {
 
   const [error, setError] = useState();
 
-  function createGroceryList(e) {
+  const createGroceryList = (e) => {
     e.preventDefault();
     setError(null);
 

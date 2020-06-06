@@ -4,7 +4,8 @@ import React from "react";
 // styles
 import "./index.css";
 
-const Footer = (groceryListId, handleCreate) => {
+const Footer = (props) => {
+  const { groceryListId, handleCreate } = props;
   return (
     <footer className="app-footer">
       <p>
@@ -17,7 +18,7 @@ const Footer = (groceryListId, handleCreate) => {
           this link
         </a>{" "}
         or{" "}
-        <a href="/" onClick={() => handleCreate()}>
+        <a href="/" onClick={handleCreate}>
           create a new grocery list
         </a>
         .

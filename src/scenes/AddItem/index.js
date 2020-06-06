@@ -10,12 +10,12 @@ import "./index.css";
 // error handlers
 import ErrorMessage from "../../components/ErrorMessage";
 
-function AddItem(props) {
+const AddItem = (props) => {
   const { groceryListId, userId } = props;
 
   const [error, setError] = useState("");
 
-  function addItem(e) {
+  const addItem = (e) => {
     e.preventDefault();
     setError(null);
 

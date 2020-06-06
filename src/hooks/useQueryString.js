@@ -1,8 +1,19 @@
 import { useState, useCallback } from "react";
 
+// update a query string  without causing a browser reload
+const updateQueryStringWithoutReload = (queryString) => {
+  const { protocol, host, pathname } = window.location;
+  const newUrl = `${protocol}//${host}${pathname}?${queryString}`;
+  window.history.pushState({ path: newUrl }, "", newUrl);
+};
+
+const getQueryParamValue = (key) => {
+  return new URLSearchParams(window.location.search).get(key);
+};
+
 // This custom hook keeps a state value in sync with a query parameter in the website's URL.
 // This allows the URL to be used to restore state on full-page reload or if the URL is shared/bookmarked.
-function useQueryString(key) {
+const useQueryString = (key) => {
   const [paramValue, setParamValue] = useState(getQueryParamValue(key));
 
   // The useCallback hook is only called when one of its dependencies change.
@@ -14,17 +25,6 @@ function useQueryString(key) {
     },
     [key, setParamValue]
   );
-
-  function getQueryParamValue(key) {
-    return new URLSearchParams(window.location.search).get(key);
-  }
-
-  // update a query string  without causing a browser reload
-  function updateQueryStringWithoutReload(queryString) {
-    const { protocol, host, pathname } = window.location;
-    const newUrl = `${protocol}//${host}${pathname}?${queryString}`;
-    window.history.pushState({ path: newUrl }, "", newUrl);
-  }
 
   return [paramValue, onSetValue];
 }

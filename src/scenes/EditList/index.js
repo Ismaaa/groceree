@@ -7,11 +7,12 @@ import "./index.css";
 // components
 import AddItem from "./AddItem";
 import ItemList from "./ItemList";
+import Footer from "../../components/Footer";
 
 function EditList(props) {
   const { groceryListId, user, onCloseGroceryList, userId } = props;
 
-  function onCreateListClick(e) {
+  function handleCreate(e) {
     e.preventDefault();
     onCloseGroceryList();
   }
@@ -36,23 +37,10 @@ function EditList(props) {
           <ItemList {...{ groceryListId }}></ItemList>
         </div>
       </div>
-      <footer className="app-footer">
-        <p>
-          Share your list with others using{" "}
-          <a
-            href={`/?listId=${groceryListId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            this link
-          </a>{" "}
-          or{" "}
-          <a href="/" onClick={onCreateListClick}>
-            create a new grocery list
-          </a>
-          .
-        </p>
-      </footer>
+      <Footer
+        groceryListId={groceryListId}
+        handleCreate={handleCreate}
+      />
     </div>
   );
 }

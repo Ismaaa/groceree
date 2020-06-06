@@ -12,7 +12,7 @@ import Footer from "../../components/Footer";
 const EditList = (props) => {
   const { groceryListId, user, onCloseGroceryList, userId } = props;
 
-  function handleCreate(e) {
+  const handleCreate = (e) => {
     e.preventDefault();
     onCloseGroceryList();
   }

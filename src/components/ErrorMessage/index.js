@@ -4,10 +4,10 @@ import React from "react";
 // styles
 import "./index.css";
 
-function ErrorMessage(props) {
+const ErrorMessage = (props) => {
   const { errorCode } = props;
 
-  function getErrorMessage() {
+  const getErrorMessage = () => {
     switch (errorCode) {
       case "anonymous-auth-failed":
         return "Anonymous authentication failed. Try again.";

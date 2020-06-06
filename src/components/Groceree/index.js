@@ -16,7 +16,7 @@ import ErrorMessage from "../ErrorMessage";
 // hooks
 import useQueryString from "../../hooks/useQueryString";
 
-const App = () => {
+const Groceree = () => {
   const [user, setUser] = useState();
   const [userId, setUserId] = useState();
   const [groceryList, setGroceryList] = useState();
@@ -41,12 +41,15 @@ const App = () => {
                 setGroceryListId();
               }
             })
-            .catch(() => setError("grocery-list-get-fail"));
+            .catch((error) => {
+              console.warn(error);
+              setError("grocery-list-get-fail");
+            });
         }
       })
       .catch((error) => {
-        console.warn(error)
-        setError("anonymous-auth-failed")
+        console.warn(error);
+        setError("anonymous-auth-failed");
       });
   }, [groceryListId, setGroceryListId]);
 
@@ -94,4 +97,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Groceree;

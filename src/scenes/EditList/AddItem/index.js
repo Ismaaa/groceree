@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import * as FirestoreService from "../../../services/firestore";
 
 // styles
-import "./AddItem.css";
+import "./index.css";
 
 // error handlers
 import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";

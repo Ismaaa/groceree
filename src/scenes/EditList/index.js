@@ -2,7 +2,7 @@
 import React from "react";
 
 // styles
-import "./EditList.css";
+import "./index.css";
 
 // components
 import AddItem from "./AddItem/AddItem";

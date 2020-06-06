@@ -5,8 +5,8 @@ import React from "react";
 import "./index.css";
 
 // components
-import AddItem from "./AddItem";
-import ItemList from "./ItemList";
+import AddItem from "../AddItem";
+import ItemList from "../ItemList";
 import Footer from "../../components/Footer";
 
 function EditList(props) {

@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 
 // services
-import * as FirestoreService from "../../../services/firestore";
+import * as FirestoreService from "../../services/firestore";
 
 // styles
 import "./index.css";
 
 // error handlers
-import ErrorMessage from "../../../components/ErrorMessage";
+import ErrorMessage from "../../components/ErrorMessage";
 
 function AddItem(props) {
   const { groceryListId, userId } = props;

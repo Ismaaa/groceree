@@ -17,7 +17,7 @@ const Footer = (groceryListId, handleCreate) => {
           this link
         </a>{" "}
         or{" "}
-        <a href="/" onClick={handleCreate}>
+        <a href="/" onClick={() => handleCreate()}>
           create a new grocery list
         </a>
         .

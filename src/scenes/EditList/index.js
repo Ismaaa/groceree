@@ -9,7 +9,7 @@ import AddItem from "../AddItem";
 import ItemList from "../ItemList";
 import Footer from "../../components/Footer";
 
-function EditList(props) {
+const EditList = (props) => {
   const { groceryListId, user, onCloseGroceryList, userId } = props;
 
   function handleCreate(e) {
@@ -37,12 +37,9 @@ function EditList(props) {
           <ItemList {...{ groceryListId }}></ItemList>
         </div>
       </div>
-      <Footer
-        groceryListId={groceryListId}
-        handleCreate={handleCreate}
-      />
+      <Footer groceryListId={groceryListId} handleCreate={handleCreate} />
     </div>
   );
-}
+};
 
 export default EditList;

@@ -53,18 +53,18 @@ const Groceree = () => {
       });
   }, [groceryListId, setGroceryListId]);
 
-  function onGroceryListCreate(groceryListId, userName) {
+  const onGroceryListCreate = (groceryListId, userName) => {
     setGroceryListId(groceryListId);
     setUser(userName);
   }
 
-  function onCloseGroceryList() {
+  const onCloseGroceryList = () => {
     setGroceryListId();
     setGroceryList();
     setUser();
   }
 
-  function onSelectUser(userName) {
+  const onSelectUser = (userName) => {
     setUser(userName);
     FirestoreService.getGroceryList(groceryListId)
       .then((updatedGroceryList) => setGroceryList(updatedGroceryList.data()))

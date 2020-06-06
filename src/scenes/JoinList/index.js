@@ -13,7 +13,7 @@ import ErrorMessage from "../../components/ErrorMessage";
 // components
 import Header from '../../components/Header'
 
-function JoinList(props) {
+const JoinList = (props) => {
   const {
     users,
     groceryListId,
@@ -24,12 +24,12 @@ function JoinList(props) {
 
   const [error, setError] = useState();
 
-  function addExistingUser(e) {
+  const addExistingUser = (e) => {
     e.preventDefault();
     onSelectUser(e.target.innerText);
   }
 
-  function getUserButtonList() {
+  const getUserButtonList = () => {
     const buttonList = users.map((user) => (
       <button key={user.name} onClick={addExistingUser}>
         {user.name}
@@ -38,7 +38,7 @@ function JoinList(props) {
     return <div className="button-group">{buttonList}</div>;
   }
 
-  function addNewUser(e) {
+  const addNewUser = (e) => {
     e.preventDefault();
     setError(null);
 
@@ -57,7 +57,7 @@ function JoinList(props) {
     }
   }
 
-  function onCreateListClick(e) {
+  const onCreateListClick = (e) => {
     e.preventDefault();
     onCloseGroceryList();
   }

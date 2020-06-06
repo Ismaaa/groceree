@@ -2,15 +2,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// styles
-import './index.css';
-
 // components
-import App from './App';
+import Groceree from './components/Groceree/Groceree';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Groceree />
   </React.StrictMode>,
   document.getElementById('root')
 );

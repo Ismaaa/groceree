@@ -7,7 +7,7 @@ import * as FirestoreService from "../../services/firestore";
 // error handlers
 import ErrorMessage from "../../components/ErrorMessage";
 
-function ItemList(props) {
+const ItemList = (props) => {
   const { groceryListId } = props;
 
   const [groceryItems, setGroceryItems] = useState([]);

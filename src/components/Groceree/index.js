@@ -2,16 +2,19 @@
 import React, { useState, useEffect } from "react";
 
 // services
-import * as FirestoreService from "./services/firestore";
+import * as FirestoreService from "../../services/firestore";
+
+// styles
+import "./index.css";
 
 // components
-import CreateList from "./scenes/CreateList/CreateList";
-import JoinList from "./scenes/JoinList/JoinList";
-import EditList from "./scenes/EditList/EditList";
-import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
+import CreateList from "../../scenes/CreateList";
+import EditList from "../../scenes/EditList";
+import JoinList from "../../scenes/JoinList";
+import ErrorMessage from "../ErrorMessage";
 
 // hooks
-import useQueryString from "./hooks/useQueryString";
+import useQueryString from "../../hooks/useQueryString";
 
 const App = () => {
   const [user, setUser] = useState();
@@ -41,7 +44,10 @@ const App = () => {
             .catch(() => setError("grocery-list-get-fail"));
         }
       })
-      .catch(() => setError("anonymous-auth-failed"));
+      .catch((error) => {
+        console.warn(error)
+        setError("anonymous-auth-failed")
+      });
   }, [groceryListId, setGroceryListId]);
 
   function onGroceryListCreate(groceryListId, userName) {

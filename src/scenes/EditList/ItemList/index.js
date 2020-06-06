@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import * as FirestoreService from "../../../services/firestore";
 
 // error handlers
-import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "../../../components/ErrorMessage";
 
 function ItemList(props) {
   const { groceryListId } = props;

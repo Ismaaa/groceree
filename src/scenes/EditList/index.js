@@ -5,8 +5,8 @@ import React from "react";
 import "./index.css";
 
 // components
-import AddItem from "./AddItem/AddItem";
-import ItemList from "./ItemList/ItemList";
+import AddItem from "./AddItem";
+import ItemList from "./ItemList";
 
 function EditList(props) {
   const { groceryListId, user, onCloseGroceryList, userId } = props;

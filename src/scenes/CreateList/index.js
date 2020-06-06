@@ -8,7 +8,7 @@ import * as FirestoreService from "../../services/firestore";
 import "./index.css";
 
 // error handlers
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "../../components/ErrorMessage";
 
 const CreateList = (props) => {
   const { onCreate, userId } = props;
